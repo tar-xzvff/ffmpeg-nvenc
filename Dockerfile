@@ -25,6 +25,9 @@ RUN apt-get update -qq && apt-get -y install \
       yasm \
       zlib1g-dev
 
+# Let's Encryptルート証明書が期限切れ対策
+RUN apt-get -y install --reinstall ca-certificates
+
 # 作業ディレクトリ作成
 RUN mkdir -p ~/ffmpeg_sources ~/bin
 
